@@ -1,0 +1,158 @@
+---
+# Built by Jekyll. Case studies come from _data/cases.yml; site title/description from _config.yml.
+---
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ site.title }}</title>
+<meta name="description" content="{{ site.description | escape }}">
+<meta name="theme-color" content="#121210">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:title" content="{{ site.title | escape }}">
+<meta property="og:description" content="{{ site.description | escape }}">
+<meta property="og:image" content="{{ site.social_image | absolute_url }}">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Inter:wght@400;500;600;700;800&amp;display=swap">
+<link rel="preload" as="image" href="assets/a50eabb0a1b0797d14ca68742cb832be.jpg" fetchpriority="high">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div style="width:100%;background:#F7F5F0;overflow-x:hidden;">
+
+  <!-- NAV -->
+  <div style="position:sticky;top:0;z-index:80;background:rgba(247,245,240,0.94);backdrop-filter:blur(6px);border-bottom:1px solid rgba(18,18,16,0.14);">
+    <div class="container" style="display:flex;align-items:center;justify-content:space-between;padding-top:18px;padding-bottom:18px;">
+      <a href="#top" style="display:flex;align-items:center;gap:12px;">
+        <span style="width:34px;height:34px;border-radius:50%;background:#121210;color:#F7F5F0;display:flex;align-items:center;justify-content:center;font-family:'Anton',sans-serif;font-size:12px;flex-shrink:0;">SB</span>
+        <span style="font-size:15px;font-weight:700;">Sushant Bhattarai</span>
+      </a>
+      <div style="display:flex;align-items:center;gap:32px;">
+        <a href="#work" style="font-size:14px;font-weight:600;">Work</a>
+        <a href="#approach" style="font-size:14px;font-weight:600;">What I Do</a>
+        <a href="#contact" style="font-size:14px;font-weight:600;">Contact</a>
+        <span style="font-size:12.5px;letter-spacing:0.06em;color:rgba(18,18,16,0.45);font-weight:600;">London, UK</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <div id="top" style="position:relative;overflow:hidden;background:#0c0c0b;padding-top:96px;padding-bottom:88px;">
+    <img fetchpriority="high" src="assets/a50eabb0a1b0797d14ca68742cb832be.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 40%;filter:grayscale(1);">
+    <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,8,7,0.86) 0%,rgba(8,8,7,0.62) 55%,rgba(8,8,7,0.3) 100%);"></div>
+    <div class="container" style="position:relative;">
+      <div style="max-width:760px;">
+        <div class="kicker" style="margin-bottom:22px;color:#C98A87;">Hello there, I'm</div>
+        <h1 class="disp" style="font-size:clamp(56px,10vw,150px);line-height:0.92;color:#fff;text-shadow:0 2px 24px rgba(0,0,0,0.45);">Sushant<br>Bhattarai</h1>
+        <p style="margin-top:32px;font-size:17px;line-height:1.7;max-width:560px;color:rgba(255,255,255,0.92);text-shadow:0 1px 12px rgba(0,0,0,0.5);"><span class="role-box"><span id="hat-title" class="role-title"><span id="hat-title-text">Brand &amp; Creative Strategist</span></span> <span id="hat-desc">specialising in campaign planning, creative execution and integrated channel tactics.</span></span>
+        <span style="display:block;margin-top:0.9em;">I love unearthing insights from human behaviour to build strong brand identities, captivating visuals, and engaging campaign strategies for businesses across sectors.</span></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAST PROJECTS -->
+  
+
+  <!-- IMAGE LIGHTBOX -->
+  <div class="lightbox-overlay" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer" hidden>
+    <button type="button" class="lightbox-close" data-lb="close" aria-label="Close">×</button>
+    <button type="button" class="lightbox-arrow prev" data-lb="prev" aria-label="Previous image">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M12.5 4.5L6.5 10L12.5 15.5" stroke="#F7F5F0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+    </button>
+    <img class="lightbox-img" id="lightbox-img" alt="">
+    <button type="button" class="lightbox-arrow next" data-lb="next" aria-label="Next image">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M7.5 4.5L13.5 10L7.5 15.5" stroke="#F7F5F0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+    </button>
+    <div class="lightbox-caption" id="lightbox-caption"></div>
+  </div>
+
+  <!-- BEST SERVICES -->
+  <div id="work" style="border-top:1px solid rgba(18,18,16,0.14);padding-top:64px;padding-bottom:64px;">
+
+    <div class="container" style="margin-bottom:48px;">
+      <div class="kicker" style="margin-bottom:16px;">Work</div>
+      <h2 class="disp" style="font-size:clamp(34px,5vw,58px);">Past Projects</h2>
+    </div>
+
+    <!-- CASE STUDY LIST (collapsible — click a card to expand it in place) -->
+    
+    <div class="case-list">
+
+{%- for case in site.data.cases %}
+{% include case.html case=case index=forloop.index0 %}
+{%- endfor %}
+
+    </div>
+
+  </div><div style="padding-top:110px;padding-bottom:110px;">
+    <div id="approach" style="padding-bottom: 110px">
+    <div class="container">
+      <div class="kicker" style="text-align:center;margin-bottom:36px;">BRANDS I'VE WORKED WITH</div>
+      <div class="clients-grid">
+        <div class="client-cell"><img loading="lazy" decoding="async" src="assets/da83cfa28ad499d1e34687b282065ea6.png" alt="Fonepay"></div>
+        <div class="client-cell"><img loading="lazy" decoding="async" src="assets/3e0a4873f5845bb782cc54e06627fc4c.png" alt="Coca-Cola"></div>
+        <div class="client-cell"><img loading="lazy" decoding="async" src="assets/cf49bebbd0713841bd3c4313516cec0e.png" alt="Vianet"></div>
+        <div class="client-cell"><img loading="lazy" decoding="async" src="assets/5a6b4a12e26414387b0077a905502b52.png" alt="Samsung"></div>
+        <div class="client-cell"><img loading="lazy" decoding="async" src="assets/ca788da1d912d1e9add48935304fb1a4.png" alt="Prenetics"></div>
+        <div class="client-cell"><img loading="lazy" decoding="async" src="assets/157e2c2f6ecea6fa50843ed965f5e371.png" alt="Pernod Ricard"></div>
+        <div class="client-cell"><img loading="lazy" decoding="async" src="assets/e7f3dcf1299292574a4d01ac1f91bab4.png" alt="Suzuki"></div>
+        <div class="client-cell"><img loading="lazy" decoding="async" src="assets/ad38d03a3ab83e613b1a7738c9f7a4da.png" alt="Rittman Analytics"></div>
+        <div class="client-cell"><img loading="lazy" decoding="async" src="assets/aea7a0ebe097db90f5b4ee16d6472324.png" alt="Aloft Hotels"></div>
+        <div class="client-cell"><img loading="lazy" decoding="async" src="assets/22f0705413e767f8802e23b20e86e383.png" alt="Alteryx"></div>
+        <div class="client-cell"><img loading="lazy" decoding="async" src="assets/bb58efb50622f66f031bbb44cfe085ba.png" alt="Khukri Rum" style="max-height:56px;"></div>
+        <div class="client-cell"><img loading="lazy" decoding="async" src="assets/10c13a6669cdda19f1f310dbcd55b088.png" alt="Nepal CRS Company"></div>
+      </div>
+    </div>
+  </div><div class="container">
+      <div class="kicker" style="text-align:center;margin-bottom:36px;">What I Do</div>
+      <div>
+        <h3 class="disp services-line on">Brand &amp; Campaign Strategy</h3>
+        <h3 class="disp services-line">CREATIVE DIRECTION</h3>
+        <h3 class="disp services-line"></h3><h3 class="disp services-line">Production Coordination</h3>
+        <h3 class="disp services-line">INTEGRATED PLANNING</h3>
+      </div>
+    </div>
+  </div>
+
+  <!-- SELECTED CLIENTS -->
+  
+
+  <!-- PHILOSOPHY / PULL QUOTE -->
+  <div style="padding-bottom:110px;">
+    <div class="container">
+      
+      
+    </div>
+  </div>
+
+  <!-- CTA BAND -->
+  
+
+  <!-- FOOTER -->
+  <div id="contact" style="background:#121210;color:#F7F5F0;padding-top:96px;padding-bottom:0;">
+    <div class="container">
+      <div style="display:flex;gap:80px;flex-wrap:wrap;padding-bottom:80px;border-bottom:1px solid rgba(247,245,240,0.16);">
+        <div style="display:flex;flex-direction:column;gap:14px;">
+          <div class="kicker-light" style="margin-bottom:6px;">Let's Chat</div>
+          <a href="mailto:sushant.bhattarai@gmail.com" style="display:flex;align-items:center;gap:12px;font-size:16px;font-weight:600;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0;"><rect x="2.5" y="4.5" width="19" height="15" rx="2"></rect><path d="M3 6.5l9 7 9-7"></path></svg><span>sushant.bhattarai@gmail.com</span></a>
+          <a href="tel:+447923986920" style="display:flex;align-items:center;gap:12px;font-size:16px;font-weight:600;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0;"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"></path></svg><span>+44 (0) 7923 986 920</span></a>
+          <a href="https://www.linkedin.com/in/sushant-raj-bhattarai/" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:12px;font-size:16px;font-weight:600;"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="flex-shrink:0;"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path></svg><span>Sushant R. Bhattarai</span></a>
+        </div>
+      </div>
+      <div class="foot-marquee" style="padding-top:24px;">
+        <span>SUSHANT BHATTARAI —&nbsp;</span>
+      </div>
+      <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;padding-top:20px;padding-bottom:26px;font-size:12.5px;color:rgba(247,245,240,0.48);">
+        <span>© 2026 Sushant Bhattarai · Brand &amp; Creative Strategist</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+<script src="main.js" defer></script>
+</body>
+</html>

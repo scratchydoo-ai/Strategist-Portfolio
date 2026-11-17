@@ -1,0 +1,386 @@
+# Case studies, in the order they appear on the page.
+# Numbers (01, 02...) and the Previous/Next Project buttons are worked out from this order,
+# so to add, remove or reorder a case you only change this file.
+#
+# Text fields can contain HTML (e.g. <br>, &nbsp;). For long text use ">-" and indent the
+# text on the next lines: you then don't need to worry about quotes or apostrophes.
+#
+# ---------------------------------------------------------------- template for a new case
+# - id: newclient                      # short, lowercase, no spaces; must be unique
+#   title: CAMPAIGN TYPE IN CAPITALS   # the big heading in the list
+#   client: Client Name
+#   nav_category: Short Category       # small pink label on the Previous/Next buttons
+#   tags: TV · Print · Digital
+#   sections:
+#     - label: Background
+#       text: >-
+#         Paragraph text here.
+#     - label: Challenge
+#       text: >-
+#         ...
+#     - label: Insight
+#       text: >-
+#         ...
+#     - label: Strategy
+#       text: >-
+#         ...
+#   result: Optional one-line result. Delete this line if there isn't one.
+#   media:
+#     - type: gallery                  # a grid of images and/or videos
+#       style: "grid-template-columns:1fr 1fr;"   # 1fr = one column, 1fr 1fr = two, etc.
+#       items:
+#         - image: assets/newclient-1.jpg
+#           alt: Describe the image
+#         - video: assets/newclient-tvc.mp4
+#           poster: assets/newclient-tvc-poster.jpg
+#           label: Describe the video
+#     - type: caption
+#       text: Caption shown under the block above.
+#
+# Other media layouts used below: class "weekender-grid" (3 columns of posters),
+# class "battle-grid" (4 across, centred), "battle-grid single" (one large centred image),
+# and type "mosaic" (hand-placed columns, see Fonepay). Images can carry a "style" for
+# fixed heights or cropping.
+#
+# Click-to-enlarge: give a case a "lightbox" list (image, alt, caption) and give a mosaic
+# image "lightbox: <position in that list, starting at 0>". See Fonepay.
+# -----------------------------------------------------------------------------------------
+
+- id: fonepay
+  title: NATIONWIDE ENROLLMENT CAMPAIGN
+  title_style: "line-height: 1.01; letter-spacing: 0.03em"
+  client: Fonepay Payments
+  nav_category: Enrollment Campaign
+  tags: Brand Strategy · TV · Print · Digital
+  sections:
+    - label: Background
+      text: >-
+        Before the pandemic, cashless payments were still new to Nepal, and users were wary of a market that felt confusing and hard to trust. F1Soft International, the network behind Nepal's interoperable mobile-banking gateway, needed to turn that wariness into everyday signups and usage.
+    - label: Challenge
+      text: >-
+        Two ideas had to land in the same breath. The first: Fonepay is a feature inside a customer's own banking app, not a separate app to download. The second: it only works once it has been activated at their bank.
+    - label: Insight
+      text: >-
+        Millennials were the household's default early adopters of new technology. Being seen as "in the know" on new tech mattered to them. What also mattered was getting special treatment because you knew a guy who knew a guy.&nbsp;
+    - label: Strategy
+      text: >-
+        The campaign ran under one line — "Mobile Saathma, Bank Haathma" ("Your bank in your hands") — positioning digital payments as the obvious next step. It reached people through onsite bank promotions, campus and mall activations, a TV spot built on the social appeal of mobile banking. Once footfall recovered post-pandemic, we pivoted into a sweepstakes campaign, "QR Ma Upahaar" (Prizes with QR) that rewarded both users and merchants for making a QR payment through the Fonepay network.
+  result: Drove a 121% increase in digital payments nationwide
+  lightbox:
+    - image: assets/1fba45c19f56a8d1931f549bc278b292.jpg
+      alt: QR Ma Upahar social campaign creative for Fonepay
+      caption: QR Ma Upahar — key visual for the enrollment push
+    - image: assets/8e5328cdc6ba25a246f8a3da483192eb.jpg
+      alt: Still from the Fonepay TVC showing colleagues using mobile banking
+      caption: TVC still
+    - image: assets/86554ab6658a39cfc565a3ff0049ebbb.jpg
+      alt: QR Ma Upahar campaign creative, gift-themed variant one
+      caption: QR Ma Upahar, gift variant one
+    - image: assets/579c9721280fce7ae8c82c392eb913b4.jpg
+      alt: QR Ma Upahar campaign creative, gift-themed variant two
+      caption: QR Ma Upahar, gift variant two
+    - image: assets/8c55ae3ccdc7b33d30a2e71649ce8f7f.jpg
+      alt: "'Mobile Saathma, Bank Haathma' tri-fold brochure spread"
+      caption: Tri-fold brochure, full spread
+    - image: assets/82c2e055a333a7af8bc2eb4899818a0a.jpg
+      alt: Fonepay tri-fold brochure explaining how to activate mobile banking
+      caption: Brochure, activation panel
+    - image: assets/e948cda8db72e05ca1193d7bc8391fe6.jpg
+      alt: "'Gone Are the Days' infographic contrasting the old way of paying with mobile banking"
+      caption: '"Gone Are the Days" infographic'
+  media:
+    - type: mosaic
+      columns:
+        - items:
+            - image: assets/579c9721280fce7ae8c82c392eb913b4.jpg
+              alt: QR Ma Upahar campaign creative, gift-themed variant two
+              caption: <br>
+              lightbox: 3
+            - image: assets/82c2e055a333a7af8bc2eb4899818a0a.jpg
+              alt: Fonepay tri-fold brochure explaining how to activate mobile banking
+              caption: Brochures explaining the benefits of Fonepay's payment network
+              lightbox: 5
+        - style: "flex:2.2 1 0;"
+          items:
+            - image: assets/1fba45c19f56a8d1931f549bc278b292.jpg
+              alt: QR Ma Upahar social campaign creative for Fonepay
+              style: "height: 600px; object-fit: cover; object-position: 50% 0.0625%"
+              caption: Key visuals for the QR Ma Upahaar sweepstakes campaign targeting both users and merchants
+              lightbox: 0
+        - items:
+            - image: assets/e948cda8db72e05ca1193d7bc8391fe6.jpg
+              alt: "'Gone Are the Days' infographic contrasting the old way of paying with mobile banking"
+              lightbox: 6
+    - type: caption
+      text: Click any image to view it full size.
+    - type: gallery
+      style: "grid-template-columns:1fr;margin-top:20px;"
+      items:
+        - video: assets/3cf63b9efd4a27789545eadeb3964dc7.mp4
+          poster: assets/27ebaf58e153f792fab2c2e158a2a186.jpg
+          label: Be Smart! Use Mobile Banking! Fonepay TVC thumbnail
+    - type: caption
+      text: >-
+        An advert leaning on the insight of having Fonepay's digital platform being your 'guy in the know'
+
+- id: stride
+  title: New Product Development
+  client: Stride — Men's Health
+  nav_category: New Product Development
+  tags: Brand Strategy · Packaging Design
+  sections:
+    - label: Background
+      text: >-
+        Prenetics, a genome based health science company, was looking to expand into men's health, a category built on taboo subjects like ED, premature ejaculation, and hair loss, and needed a brand that could hold its own in a crowded, stigma-heavy market.
+    - label: Challenge
+      text: >-
+        Competitors already covered bold, sensitive, and educational tones, and with little room for product differentiation, the brand needed to sit in a league of its own.
+    - label: Insight
+      text: >-
+        Confidence was the gap in the market. Instead of dwelling on the problem, the opportunity was to own the solution. The created brand would&nbsp;act as a guide that helped men move forward, unapologetically and with confidence.
+    - label: Strategy
+      text: >-
+        We undertook a full market analysis and branding workshop with key Prenetics decision makers. Our analysis covered the competitors, their brand language, and pricing strategy. Our workshop birthed a brand to fill the gaps: Stride. Under the line "Confidence in every walk of life", Stride's identity paired fluid, sensual shapes with topographic elements to suggest navigation and personal journeys. A website and full product mock-ups brought the concept to life; the brand ultimately didn't launch after Prenetics made a strategic pivot.
+  media:
+    - type: gallery
+      style: "grid-template-columns:1fr;margin-top:20px;"
+      items:
+        - image: assets/da98cf7c564dee3c5f0654f467ade368.png
+          alt: Stride subway out-of-home ads for premature ejaculation and erectile dysfunction treatments
+          style: "height: 523px; object-fit: cover; object-position: 0% 58.9554%; width: 1044px; object-view-box: inset(17.0155% 22.8695% 11.8462% 0%)"
+    - type: gallery
+      style: "grid-template-columns:1fr 1fr;"
+      items:
+        - image: assets/62048431a4736e6edc39eaccb561a1ba.jpg
+          alt: Stride story-format creative with topographic gradients, and Instagram grid mockup
+          style: "height: 463px; width: 1050px; object-fit: cover; object-position: 56.3183% 47.5655%; object-view-box: inset(3.4324% 1.0551% 3.7838% 1.3604%)"
+    - type: caption
+      text: <br>
+    - type: gallery
+      style: "grid-template-columns:1fr 1fr;margin-top:20px;"
+      items: []
+
+- id: rittman
+  title: BRAND IDENTITY & WEB DEVELOPMENT
+  client: Rittman Analytics
+  nav_category: Rebrand Campaign
+  tags: Digital
+  sections:
+    - label: Background
+      text: >-
+        Rittman Analytics had spent years building a strong reputation on the strength of its client work, but had never put that reputation into words — its own brand presence had stayed an afterthought behind a website, a podcast, and a long list of happy clients.
+    - label: Challenge
+      text: >-
+        The identity had to come from qualitative signal, not the quantitative data Rittman worked in day to day — sharp enough to land with CTOs and data teams, without flattening the technical substance that made the firm credible.
+    - label: Strategy
+      text: >-
+        The process started with an audit of Rittman's own digital footprint — down to the founder's SoundCloud sessions — a competitor deep-dive, branding workshops with the team, and interviews with clients and current and former employees. What surfaced was a single line, "building data excellence into the heart of businesses," carried into a new visual identity built on abstract, architectural shapes — reflecting how no two clients' data needs are the same.
+  media:
+    - type: gallery
+      style: "grid-template-columns:1fr 1fr;"
+      items:
+        - image: assets/573128919324789f64e6a1cc0a9333cf.jpg
+          alt: Rittman Analytics rebrand collage showing the website, logotype, and sales collateral
+          style: "height:340px;"
+        - image: assets/310ddd33170f9ea6586906d2230bb78e.jpg
+          alt: Rittman Analytics website services panel, dark mode
+          style: "height: 339px; width: 398px; object-fit: cover; object-position: 0% 0%; object-view-box: inset(0% 0.0009% 0.5995% 0%)"
+    - type: gallery
+      style: "grid-template-columns:1fr 1fr;margin-top:20px;"
+      items:
+        - image: assets/999e489b7633b923afdb20a85d98d929.jpg
+          alt: Rittman Analytics website services panel, light mode
+          style: "height: 390px; object-fit: cover; object-position: 0% 50%; width: 950px"
+
+- id: noodles
+  title: INFLUENCER LED PRODUCT LAUNCH
+  client: Current Hot 'N' Spicy Noodles
+  nav_category: Product Launch
+  tags: Print · Social
+  sections:
+    - label: Background
+      text: >-
+        Yasodha Foods, an FMCG company, saw an opening in its noodle range to launch a Korean-inspired Hot 'N' Spicy variant — riding the wave of K-pop's cultural pull with Nepal's Gen Z.
+    - label: Challenge
+      text: >-
+        A competitor had already released a Korean-ramen variant. Current's version needed to become the default choice and take real market share, not just join a crowded shelf.
+    - label: Insight
+      text: >-
+        Both Gen Z and millennials followed a tight circle of social media food influencers to decide what to try next.
+    - label: Strategy
+      text: >-
+        The campaign rode the viral Spicy Noodle Challenge — bringing on Nepal's best-known celebrity couple and leading food vloggers to take part in the "Current Noodle Challenge," backed by product sampling. The result was a wave of user-generated challenge content that gave the brand outsized visibility with Gen Z and millennial audiences online.
+  result: Generated over 3M+ digital impressions
+  media:
+    - type: gallery
+      style: "grid-template-columns:1fr;"
+      items:
+        - image: assets/98891056ea6013d72fb2c063f13645ea.jpg
+          alt: Current Noodle Challenge social media creative featuring Nepali influencers
+          style: "height:400px;"
+    - type: gallery
+      style: "grid-template-columns:1fr 1fr;margin-top:20px;"
+      items:
+        - video: assets/997029869fada7dc74861f36cea80992.mp4
+          poster: assets/2cab2d432bec0640041396c1115cada6.jpg
+          label: Current Noodle Challenge video with Nepal's celebrity couple, thumbnail
+        - video: assets/a5ed94ec615782eb391b850d289e9b3e.mp4
+          poster: assets/201a816301ee83c8b8168a5aa75225ed.jpg
+          label: Mr. Foodies Nepal tries Current Hot 'N' Spicy Noodles, thumbnail
+
+- id: weekender
+  title: PRINT-BASED LAUNCH&nbsp;
+  client: The Weekender
+  nav_category: Launch Campaign
+  tags: Print · Digital
+  sections:
+    - label: Background
+      text: >-
+        Following the refined revamp of The Kathmandu Post, the paper's editorial staff approached us looking for a strategy and campaign for the launch of their weekly lifestyle supplement that was "on-brand." Whilst the potential name for the paper was already in place, a way forward in communication was still needed — one that was distinguished from competing lifestyle weeklies.
+    - label: Challenge
+      text: >-
+        Creating a communication approach that encompassed the multi-faceted interests of Kathmandu's robust cosmopolitan lifestyle.
+    - label: Insight
+      text: >-
+        Kathmandu has a plethora of scenes and cultures — the weekend is when people can fully enjoy all that the thriving metropolis has to offer: international cuisines, a thriving art scene, an ever-trending fashion scene, living cultural heritage sites, breathtaking natural hikes. Regardless of the individual, the weekend always invites you to unwind and make life more vibrant. The upcoming supplement was seen as a menu to help feed these passions.
+    - label: Strategy
+      text: >-
+        To show that The Weekender has content appealing to all the different hues of leisure people enjoy, and in line with the refined, upscale look and feel of The Kathmandu Post, the approach used bright and vibrant visuals to stand out both on social feeds and in print — conveying The Weekender's proposition of bringing more colour and life into the weekend. Character visuals were developed with the creative team around the multitude of identities and interests of the millennial target demographic, each categorised into the editorial team's thematic content pillars.
+  media:
+    - type: gallery
+      class: weekender-grid
+      items:
+        - image: assets/e9c21673c71778b49fa3f066c5113b4e.jpg
+          alt: "'Unwind in Style' Weekender poster with a cyclist in a forest"
+        - image: assets/e7408f67c8cc57a9d7369e1470d0fe07.jpg
+          alt: "'Soak in the creative' Weekender poster, temple-facade variant"
+        - image: assets/589b106485ac7eaf0bf4a0f6c1310903.jpg
+          alt: "'Soak in the creative' Weekender poster, geometric artwork variant"
+        - image: assets/417e6871c050aea788a352657ba4c166.jpg
+          alt: "'Food for your soul' Weekender poster, wine-and-cheese variant"
+        - image: assets/8a4d9434c5cc06e25801e0d7258a0689.jpg
+          alt: "'Food for your soul' Weekender poster, street-food variant"
+        - image: assets/1607b2e78a80bbd89917bb5cc4b1b006.jpg
+          alt: "'Live it up!' Weekender poster with an illustrated band on stage"
+    - type: caption
+      text: >-
+        The full Weekender pillar set: Unwind in Style, Soak in the Creative, Food for your Soul and Live It Up.
+
+- id: battle
+  title: BRAND IDENTITY & LAUNCH
+  client: Battle of the Bands Nepal
+  nav_category: Show Launch
+  tags: TV · Print · Digital
+  sections:
+    - label: Background
+      text: >-
+        Nepal has a thriving rock scene with amazing artists and bands appealing to every niche. Whether it's punk, heavy metal, classical or funk. While international talent-hunt formats like The Voice, Nepali Idol, and Dancing With The Stars were already on Nepali TV, there was no show showcasing the ever-budding talent of Nepali rock. Turnpike Entertainment wanted to start something epic: The Battle of the Bands.
+    - label: Challenge
+      text: >-
+        Creating a marketing communications campaign and show identity from scratch to make the show the talk of the town, and to gain a large participation base for a show concept around a classic genre.&nbsp;
+    - label: Insight
+      text: >-
+        Rock 'n' roll is in Nepal. Ever since the Summer of '69, generations have grown up listening to, singing along with, and playing the classics (and the not-so-classics). They formed cover bands, friendships, and even a few rivalries (Metallica vs. Aerosmith)!
+    - label: Strategy
+      text: >-
+        To stay true and authentic to rock enthusiasts, the launch strategy built the image of Battle of the Bands as the go-to resource for rock 'n' roll. Through trivia, teasers, musical giveaways and sponsored contests, the show gave aspiring musicians a platform to showcase their talent. Captivating visuals and a consistent theme escalated communication alongside auditions and planned TV programming, keeping audiences engaged online, offline, on-air, and off-air, under the straightforward prompt: "Nepal's Biggest Band Competition."
+  media:
+    - type: gallery
+      style: "grid-template-columns:1fr;"
+      items: []
+    - type: gallery
+      class: battle-grid
+      items:
+        - image: assets/5c2f0a9be6f5f8ee94b004ec723047b0.jpg
+          alt: "'Nepal's Biggest Band Competition' teaser with red silhouette performer"
+        - image: assets/75274b358cffc5164225da970d73ee2f.jpg
+          alt: Adrian Pradhan's BOBN Lockdown Playlist teaser
+        - image: assets/5f39a24405c829981da42c283346c96f.jpg
+          alt: Shred Off Challenge teaser for Battle of the Bands Nepal
+        - image: assets/112c0fb46c9089fae40b8ef744cf204e.jpg
+          alt: Rock Facts teaser hosted by Newaz
+        - image: assets/899ec5883d9658ff6f0d7747295d3f4a.jpg
+          alt: "'Coming Soon on Your TV Screen' teaser with illustrated cat and amp"
+          style: "width: 311px; height: 311px"
+        - image: assets/1c2e6663da4462989e959ca02872c389.jpg
+          alt: Battle of the Bands Nepal show format infographic
+        - image: assets/1f94ec08ddffaa44d081defa088a46bc.jpg
+          alt: "'Is Your Band Ready?' teaser with a red-lit performer"
+    - type: caption
+      text: >-
+        The individual teaser and trivia pieces that built the "Nepal's Biggest Band Competition" campaign.
+
+- id: vianet
+  title: REBRAND & TVC
+  client: Vianet Communications
+  nav_category: Rebrand & Relaunch
+  tags: TV · Print · Radio · Digital
+  sections:
+    - label: Background
+      text: >-
+        Operational since 1999, Vianet, a leading internet service provider, had high brand recall but low adoption rates in households due to the perception of being a B2B service provider.
+    - label: Challenge
+      text: >-
+        Creating a fortified brand image for Vianet with B2C services, while simultaneously showing that Vianet's network capacities were upgraded and state-of-the-art.
+    - label: Insight
+      text: >-
+        As households were the primary target buyer group, family dynamics were researched. In this generation, family dynamics revolve around screens — Smart TVs, YouTube, laptops, phones, tablets. The older generation uses them to keep tabs on acquaintances and family abroad; children and teens for learning and entertainment; younger professionals for their livelihoods. The unifying element, in both a family and with technology? Connection.
+    - label: Strategy
+      text: >-
+        With connection as the organising idea, the campaign reframed Vianet's existing tagline into one more inclusive and geared towards household adoption — "Aba Sabai Connected" ("Now Everyone's Connected"). Carrying this was a tweak to the logo and a more streamlined, clean visual rebrand. The campaign aligned each of Vianet's services with members of a household — a representation of the campaign's target audience. TVCs and creatives were developed in line with the idea of connection, and how untethered connectivity gave joy to the characters — reinforced with an upbeat jingle in the TVC concept.
+  media:
+    - type: caption
+      text: >-
+        The "Aba Sabai Connected" TVC.
+    - type: gallery
+      style: "grid-template-columns:1fr 1fr;margin-top:20px;"
+      items:
+        - image: assets/6198d36eeaf60e11f4888dd17ee87835.jpg
+          alt: "'Upgrade to Vianet' pricing plan ad with a multi-generational family"
+          style: "grid-column:1 / -1;height:280px;object-fit:contain;background:#fff;"
+        - image: assets/c3b66a4ac6c2dd8f4a2c880c1c525077.jpg
+          alt: ViaSecure child-safety ad featuring a young boy on a staircase
+          style: "height:280px;"
+        - image: assets/95b1df472415b1cf89c04b37cfa93217.jpg
+          alt: Final Vianet wordmark with 'Aba Sabai Connected' tagline
+          style: "height:280px;object-fit:contain;background:#fff;"
+    - type: gallery
+      style: "grid-template-columns:1fr;margin-top:20px;"
+      items:
+        - video: assets/e2f1b1d52a2caa7258d234163e9b0e58.mp4
+          poster: assets/e348ffcb4f397825441f8d87e2a6f35d.jpg
+          label: Vianet 'Aba Sabai Connected' TVC thumbnail
+    - type: caption
+      text: The refreshed pricing ad, a ViaSecure creative, and the finished wordmark in use.
+
+- id: kantipur
+  title: REBRAND & LAUNCH CAMPAIGN
+  client: Kantipur Television HD
+  nav_category: Rebrand & Launch
+  tags: TV · Print · Radio · Digital
+  sections:
+    - label: Background
+      text: >-
+        Since 2003 Kantipur TV's programming and news broadcasts had been a household staple across Nepal. In 2017, Kantipur upgraded to an HD transmission, and sought to uplift its programming to reflect its position as a market leader in content and quality.
+    - label: Challenge
+      text: >-
+        Reimagine Kantipur TV to give it an appeal to a newer generation of millennials without deviating from its already established brand imagery, and develop a market communication strategy to build buzz around the transition.
+    - label: Insight
+      text: >-
+        Viewers turn to Kantipur's news and programming to gain perspective on what happens around the country.
+    - label: Strategy
+      text: >-
+        Aligning the upgrade to HD transmission with viewers wanting to gain perspective, the rebrand and campaign focused on Kantipur TV HD bringing in a "Higher Perspective" on culture, news, and events around Nepal. As part of the upgrade, the logo was revised in line with that idea, portraying Kantipur's iconic temple from a bird's-eye view. The launch strategy encompassed a 360° integrated communications and awareness plan to tease and familiarize the market with both the new logo and the upgraded programming lineup. My role included developing the main communication approach, as well as overseeing and outlining the creative approach.
+  media:
+    - type: gallery
+      class: battle-grid
+      items:
+        - image: assets/b217227a4575a87f39e5a91839ff5d54.jpg
+          alt: Teaser for the upgraded Kantipur TV HD programming lineup
+        - image: assets/566221e9fc62ba3573a57bc2a3719cb3.jpg
+          alt: Teaser for the upgraded Kantipur TV HD programming lineup
+    - type: gallery
+      class: battle-grid single
+      items:
+        - image: assets/ad3670356672866d98ccf2296e2b76cc.jpg
+          alt: "'Higher Perspective' final ad with an aerial mountain sunrise"

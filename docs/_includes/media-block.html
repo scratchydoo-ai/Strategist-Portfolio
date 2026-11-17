@@ -1,0 +1,33 @@
+{%- comment -%}
+  One entry of a case's "media" list (see _data/cases.yml):
+  type: caption | mosaic | gallery (default)
+{%- endcomment -%}
+{%- assign b = include.block -%}
+{%- if b.type == "caption" %}
+          <div class="modal-caption">{{ b.text }}</div>
+{%- elsif b.type == "mosaic" %}
+          <div class="modal-gallery-mosaic">
+{%- for col in b.columns %}
+            <div class="mosaic-col"{% if col.style %} style="{{ col.style }}"{% endif %}>
+{%- for it in col.items %}
+              <figure class="mosaic-item"{% if it.lightbox != nil %} data-lb-index="{{ it.lightbox }}"{% endif %}>
+                <img loading="lazy" decoding="async" src="{{ it.image }}" alt="{{ it.alt | escape }}"{% if it.style %} style="{{ it.style }}"{% endif %}>
+{%- if it.caption %}
+                <figcaption>{{ it.caption }}</figcaption>
+{%- endif %}
+              </figure>
+{%- endfor %}
+            </div>
+{%- endfor %}
+          </div>
+{%- else %}
+          <div class="{{ b.class | default: 'modal-gallery' }}"{% if b.style %} style="{{ b.style }}"{% endif %}>
+{%- for it in b.items %}
+{%- if it.video %}
+            <div class="modal-video-wrap"><video class="modal-video-frame" controls playsinline preload="none" poster="{{ it.poster }}" src="{{ it.video }}" aria-label="{{ it.label | escape }}"></video></div>
+{%- else %}
+            <img loading="lazy" decoding="async" src="{{ it.image }}" alt="{{ it.alt | escape }}"{% if it.style %} style="{{ it.style }}"{% endif %}>
+{%- endif %}
+{%- endfor %}
+          </div>
+{%- endif %}

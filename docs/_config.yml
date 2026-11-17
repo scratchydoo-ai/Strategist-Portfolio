@@ -1,0 +1,11 @@
+# Site settings used in the page <head>. Restart `jekyll serve` after changing this file.
+title: Sushant Bhattarai — Portfolio
+description: Sushant Bhattarai, a London-based Brand & Creative Strategist specialising in campaign planning, creative execution and integrated channel tactics.
+# Image used when the site is shared on LinkedIn, WhatsApp, Slack etc.
+social_image: /assets/a50eabb0a1b0797d14ca68742cb832be.jpg
+
+# Files that should not be published.
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md

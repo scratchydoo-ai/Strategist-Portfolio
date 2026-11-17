@@ -1,0 +1,180 @@
+/* Extracted from source/Main.dc.html. */
+[hidden]{display:none !important;}
+html{scroll-behavior:smooth;}
+body{margin:0;background:#F7F5F0;font-family:'Inter',sans-serif;color:#121210;-webkit-font-smoothing:antialiased;}
+.disp{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:0.01em;margin:0;}
+p{margin:0;}
+a{color:inherit;text-decoration:none;}
+ul{margin:0;padding:0;}
+::selection{background:#C98A87;color:#121210;}
+.container{max-width:1220px;margin:0 auto;padding-left:56px;padding-right:56px;box-sizing:border-box;}
+.kicker{font-size:12.5px;letter-spacing:0.14em;text-transform:uppercase;font-weight:600;color:rgba(18,18,16,0.5);}
+.kicker-light{font-size:12.5px;letter-spacing:0.14em;text-transform:uppercase;font-weight:600;color:rgba(247,245,240,0.55);}
+
+@keyframes spin360{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
+.spin-badge{animation:spin360 14s linear infinite;}
+
+/* Collapsible case-study list — FAQ style. No card, no box, no shadow:
+   just a plain row per case in normal document flow, separated by thin
+   dividers. The header row (number, campaign type, client name, tags)
+   is the whole clickable toggle target; the hero image and copy expand
+   directly beneath it when open. Campaign type is set in the largest,
+   boldest type in the row — client name is small and secondary — since
+   a recruiter scanning this list cares about the kind of work shown far
+   more than which (often unrecognizable) client it was made for. */
+.spotlight-dim{position:fixed;inset:0;background:rgba(8,8,7,0.9);z-index:90;opacity:0;pointer-events:none;transition:opacity .35s ease;}
+.spotlight-dim.is-on{opacity:1;}
+.case-item.is-lit{position:relative;z-index:91;background:#F7F5F0;}
+/* Dark "lightroom" theme for the case-study section: fades to near-black once scrolled into view; the hovered or open case reverts to light. */
+#work{transition:background-color .6s ease,color .6s ease;}
+.case-item{color:#121210;transition:background-color .8s ease,color .8s ease,border-color .8s ease;}
+#work.work-dark{background:#121210;color:#F7F5F0;}
+#work.work-dark .kicker{color:rgba(247,245,240,0.55);}
+#work.work-dark .case-list{border-top-color:rgba(247,245,240,0.16);}
+#work.work-dark .case-item:hover{position:relative;z-index:91;background:#F7F5F0;}
+#work.work-dark .case-item:not(.is-lit):not(:hover){color:#F7F5F0;border-bottom-color:rgba(247,245,240,0.16);}
+#work.work-dark .case-item:not(.is-lit):not(:hover) .case-toggle-client{color:rgba(247,245,240,0.55);}
+#work.work-dark .case-item:not(.is-lit):not(:hover) .case-toggle-tags{color:rgba(247,245,240,0.5);}
+#work.work-dark .case-item:not(.is-lit):not(:hover) .case-toggle-icon{border-color:rgba(247,245,240,0.28);}
+#work.work-dark .case-item:not(.is-lit):not(:hover) .case-toggle-icon path{stroke:#F7F5F0;}
+#work .case-toggle-client,#work .case-toggle-tags,#work .case-toggle-icon{transition:color .8s ease,border-color .8s ease,transform .25s ease;}
+.case-list{border-top:1px solid rgba(18,18,16,0.14);padding:0 56px;}
+.case-item{max-width:1080px;width:100%;margin:0 auto;border-bottom:1px solid rgba(18,18,16,0.14);scroll-margin-top:88px;}
+.case-toggle{display:flex;align-items:center;justify-content:space-between;gap:24px;width:100%;border:none;background:none;padding:34px 0;margin:0;font-family:inherit;color:inherit;text-align:left;cursor:pointer;flex-wrap:wrap;}
+.case-toggle-left{display:flex;align-items:baseline;gap:18px;min-width:0;}
+.case-toggle-num{font-family:'Anton',sans-serif;font-weight:400;font-size:15px;color:#C98A87;letter-spacing:0.04em;flex-shrink:0;}
+.case-toggle-text{min-width:0;}
+.case-toggle-cat{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(22px,3.2vw,36px);line-height:1.06;letter-spacing:0.01em;}
+.case-toggle-client{font-size:14px;font-weight:600;color:rgba(18,18,16,0.48);margin-top:6px;}
+.case-toggle-right{display:flex;align-items:center;gap:22px;flex-shrink:0;margin-left:auto;}
+.case-toggle-tags{font-size:11.5px;letter-spacing:0.06em;text-transform:uppercase;color:rgba(18,18,16,0.4);font-weight:600;text-align:right;max-width:200px;}
+.case-toggle-icon{flex-shrink:0;width:32px;height:32px;border-radius:50%;border:1px solid rgba(18,18,16,0.16);display:flex;align-items:center;justify-content:center;transition:transform 0.25s ease;}
+.case-toggle.is-open .case-toggle-icon{transform:rotate(180deg);}
+
+/* Case-study detail — expands inline beneath the header row. The hero
+   image now lives here (it's part of the expanded content, not the
+   always-visible header), followed by the same copy rows as before. */
+.case-detail{padding:4px 0 48px;}
+.modal-row{display:grid;grid-template-columns:140px 1fr;gap:28px;padding:20px 0;border-top:1px solid rgba(18,18,16,0.14);}
+.modal-label{font-size:12px;letter-spacing:0.08em;text-transform:uppercase;font-weight:700;color:rgba(18,18,16,0.5);}
+.modal-copy{font-size:15px;line-height:1.65;color:rgba(18,18,16,0.82);}
+.modal-gallery{display:grid;gap:16px;margin-top:32px;}
+.modal-gallery img{width:100%;display:block;border-radius:12px;object-fit:cover;}
+.modal-caption{margin-top:12px;font-size:13px;font-style:italic;color:rgba(18,18,16,0.5);}
+
+/* Clips play inline with the native video player (YouTube iframes are blocked by the artifact sandbox, so the clips are uploaded files). */
+.modal-video-wrap{position:relative;}
+.modal-video{position:relative;display:block;width:100%;border:none;padding:0;margin:0;background:none;cursor:pointer;border-radius:12px;overflow:hidden;font-family:inherit;}
+.modal-video img{width:100%;display:block;object-fit:cover;}
+.modal-video-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:60px;height:60px;border-radius:50%;background:rgba(18,18,16,0.72);display:flex;align-items:center;justify-content:center;transition:background 0.2s ease;}
+.modal-video:hover .modal-video-play{background:rgba(18,18,16,0.88);}
+.modal-video-label{position:absolute;left:16px;bottom:14px;color:#fff;font-size:12px;letter-spacing:0.06em;text-transform:uppercase;font-weight:700;background:rgba(18,18,16,0.6);padding:6px 12px;border-radius:100px;}
+.modal-video-frame{width:100%;aspect-ratio:16/9;display:block;border:none;border-radius:12px;background:#000;object-fit:cover;}
+
+/* Results highlight box — only rendered when a case actually has a
+   result to show (see CASE_RESULTS in the script below). */
+.result-box{margin-top:28px;background:rgba(201,138,135,0.14);border:1px solid rgba(201,138,135,0.4);border-radius:14px;padding:22px 26px;}
+.result-label{font-size:11px;letter-spacing:0.1em;text-transform:uppercase;font-weight:700;color:#a8675f;margin-bottom:8px;}
+.result-copy{font-size:15px;line-height:1.6;font-weight:600;color:#121210;}
+
+/* Mosaic image grid: explicit side-by-side columns (real DOM columns,
+   not a CSS `column-count` auto-flow — this is what makes placement
+   controllable: which image sits in which column, and in what order,
+   is set directly in the markup below, not left to the browser to
+   decide). Every image keeps its own natural aspect ratio — width
+   fills its column, height is auto, nothing is ever cropped or
+   stretched. Click any image to open it full size. */
+.modal-gallery-mosaic{display:flex;gap:20px;margin-top:32px;align-items:flex-start;}
+.modal-gallery-mosaic .mosaic-col{flex:1 1 0;min-width:0;display:flex;flex-direction:column;gap:20px;}
+.modal-gallery-mosaic .mosaic-item{margin:0;cursor:zoom-in;}
+.modal-gallery-mosaic .mosaic-item img{width:100%;height:auto;display:block;border-radius:12px;object-fit:contain;background:rgba(18,18,16,0.04);transition:opacity 0.2s ease;}
+.modal-gallery-mosaic .mosaic-item:hover img{opacity:0.85;}
+.modal-gallery-mosaic .mosaic-item figcaption{margin-top:10px;font-size:12px;color:rgba(18,18,16,0.5);}
+@media(max-width:640px){
+  .modal-gallery-mosaic{flex-direction:column;}
+}
+
+/* Lightbox: click-to-expand full-size view with next/prev through the
+   case's whole image set — works identically on touch, unlike hover. */
+.lightbox-overlay{position:fixed;inset:0;background:rgba(10,10,9,0.94);z-index:400;display:flex;align-items:center;justify-content:center;padding:40px;box-sizing:border-box;}
+.lightbox-img{max-width:86vw;max-height:76vh;object-fit:contain;display:block;border-radius:6px;box-shadow:0 40px 90px -30px rgba(0,0,0,0.7);}
+.lightbox-close{position:fixed;top:26px;right:26px;width:44px;height:44px;border-radius:50%;border:1px solid rgba(247,245,240,0.3);background:rgba(247,245,240,0.08);color:#F7F5F0;font-size:22px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0;font-family:inherit;}
+.lightbox-arrow{position:fixed;top:50%;transform:translateY(-50%);width:52px;height:52px;border-radius:50%;border:1px solid rgba(247,245,240,0.3);background:rgba(247,245,240,0.08);cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0;}
+.lightbox-arrow.prev{left:26px;}
+.lightbox-arrow.next{right:26px;}
+.lightbox-caption{position:fixed;left:0;right:0;bottom:28px;text-align:center;color:rgba(247,245,240,0.78);font-size:13px;letter-spacing:0.02em;padding:0 100px;box-sizing:border-box;}
+@media(max-width:640px){
+  .lightbox-overlay{padding:20px;}
+  .lightbox-arrow{width:44px;height:44px;}
+  .lightbox-arrow.prev{left:10px;}
+  .lightbox-arrow.next{right:10px;}
+  .lightbox-caption{padding:0 60px;font-size:12px;}
+}
+
+/* Case-to-case navigation — now an inline pager at the bottom of each
+   expanded case, not fixed to the viewport (there's no overlay to pin
+   it against any more). */
+.case-nav{display:flex;gap:16px;margin-top:40px;padding-top:28px;border-top:1px solid rgba(18,18,16,0.14);}
+.case-nav-btn{flex:1;display:flex;align-items:center;gap:14px;padding:16px 20px;border-radius:14px;border:1px solid rgba(18,18,16,0.16);background:#fff;cursor:pointer;font-family:inherit;color:inherit;text-align:left;transition:border-color 0.2s ease;}
+.case-nav-btn:hover{border-color:rgba(18,18,16,0.34);}
+.case-nav-btn.next{flex-direction:row-reverse;text-align:right;}
+.case-nav-arrow{width:36px;height:36px;border-radius:50%;background:#F7F5F0;border:1px solid rgba(18,18,16,0.16);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.case-nav-label{font-size:10.5px;letter-spacing:0.08em;text-transform:uppercase;font-weight:700;color:rgba(18,18,16,0.4);}
+.case-nav-kicker{font-size:10.5px;letter-spacing:0.08em;text-transform:uppercase;font-weight:700;color:#C98A87;margin-top:2px;}
+.case-nav-name{font-size:14px;font-weight:700;margin-top:2px;}
+@media(max-width:640px){
+  .case-nav{gap:10px;margin-top:28px;padding-top:20px;}
+  .case-nav-btn{min-width:0;gap:8px;padding:10px 12px;border-radius:12px;}
+  .case-nav-btn > div{min-width:0;}
+  .case-nav-arrow{width:26px;height:26px;}
+  .case-nav-arrow svg{width:12px;height:12px;}
+  .case-nav-label{font-size:9px;}
+  .case-nav-kicker{display:none;}
+  .case-nav-name{font-size:12px;line-height:1.25;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+}
+
+.services-line{font-size:clamp(38px,7vw,96px);line-height:1.02;text-align:center;color:rgba(18,18,16,0.16);}
+.services-line.on{color:#121210;}
+
+.clients-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(18,18,16,0.16);border-left:1px solid rgba(18,18,16,0.16);}
+.client-cell{border-right:1px solid rgba(18,18,16,0.16);border-bottom:1px solid rgba(18,18,16,0.16);display:flex;align-items:center;justify-content:center;padding:34px 24px;height:108px;box-sizing:border-box;}
+.client-cell img{max-width:100%;max-height:38px;object-fit:contain;filter:grayscale(1);opacity:0.72;}
+
+.foot-marquee{overflow:hidden;white-space:nowrap;}
+.foot-marquee span{font-family:'Anton',sans-serif;font-size:clamp(60px,11vw,150px);color:#F7F5F0;letter-spacing:0.01em;}
+
+@media(max-width:860px){
+  .container{padding-left:22px;padding-right:22px;}
+  .case-list{padding:0 20px;}
+  .case-toggle{padding:24px 0;}
+  .case-toggle-tags{display:none;}
+  .case-detail{padding:4px 0 32px;}
+  .modal-row{grid-template-columns:1fr;gap:8px;}
+  .clients-grid{grid-template-columns:repeat(2,1fr);}
+}
+/* Lit panel = exactly the row (grey line to grey line); side padding keeps text off the panel edge. */
+.case-item{box-sizing:border-box;max-width:1136px;padding-left:28px;padding-right:28px;}
+@media(max-width:640px){
+  .case-list{padding:0 4px;}
+  .case-item{padding-left:16px;padding-right:16px;}
+}
+.weekender-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:32px;align-items:start;}
+.weekender-grid img{width:100%;height:auto;display:block;border-radius:8px;}
+@media(max-width:640px){.weekender-grid{grid-template-columns:repeat(2,1fr);gap:10px;}}
+.battle-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:16px;margin-top:20px;align-items:flex-start;}
+.battle-grid img{width:calc((100% - 48px)/4);height:auto;display:block;border-radius:8px;}
+.battle-grid.single img{width:calc((100% - 48px)/4*1.7);}
+@media(max-width:640px){.battle-grid.single img{width:100%;}.battle-grid{gap:10px;}.battle-grid img{width:calc((100% - 10px)/2);}}
+/* Header intro: six "hats" type in, hold, then erase with a cursor (driven by a small script below). */
+.role-box{display:block;min-height:3.5em;}
+.role-static{font-weight:500;}
+.role-title{display:inline;border:1.5px solid #C98A87;background:transparent;color:#C98A87;font-weight:800;padding:1px 10px;border-radius:4px;text-shadow:none;letter-spacing:0.01em;-webkit-box-decoration-break:clone;box-decoration-break:clone;}
+.hat-caret{display:inline-block;width:2px;height:1.05em;background:#C98A87;margin-left:2px;vertical-align:-0.14em;animation:hatBlink 1s steps(1) infinite;}
+.hat-caret.solid{animation:none;}
+@keyframes hatBlink{0%,49%{opacity:1;}50%,100%{opacity:0;}}
+@media(max-width:640px){.role-box{min-height:6.9em;}}
+/* Play-button overlay on every clip; hidden while the video is playing (class toggled by the script). */
+.modal-video-wrap::before{content:"";position:absolute;top:50%;left:50%;width:72px;height:72px;margin:-36px 0 0 -36px;border-radius:50%;background:rgba(18,18,16,0.72);border:2px solid rgba(255,255,255,0.85);cursor:pointer;z-index:2;transition:opacity .2s ease;}
+.modal-video-wrap::after{content:"";position:absolute;top:50%;left:50%;width:0;height:0;margin:-13px 0 0 -8px;border-left:23px solid #fff;border-top:13px solid transparent;border-bottom:13px solid transparent;pointer-events:none;z-index:3;transition:opacity .2s ease;}
+.modal-video-wrap.is-playing::before,.modal-video-wrap.is-playing::after{opacity:0;}
+.modal-video-wrap.is-playing::before{pointer-events:none;}

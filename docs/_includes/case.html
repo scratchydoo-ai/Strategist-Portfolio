@@ -1,0 +1,59 @@
+{%- comment -%}
+  One case study row. Called from index.html for each entry in _data/cases.yml.
+  include.case  = the entry, include.index = its position (0-based).
+{%- endcomment -%}
+{%- assign c = include.case -%}
+{%- assign all = site.data.cases -%}
+{%- assign n = all.size -%}
+{%- assign i = include.index -%}
+{%- assign pi = i | minus: 1 -%}
+{%- if pi < 0 -%}{%- assign pi = n | minus: 1 -%}{%- endif -%}
+{%- assign ni = i | plus: 1 | modulo: n -%}
+{%- assign prev = all[pi] -%}
+{%- assign next = all[ni] -%}
+{%- assign num = i | plus: 1 -%}
+      <div class="case-item" id="case-{{ c.id }}"{% if c.lightbox %} data-gallery="{{ c.lightbox | jsonify | escape }}"{% endif %}>
+        <button type="button" class="case-toggle" aria-expanded="false">
+          <div class="case-toggle-left">
+            <span class="case-toggle-num">{% if num < 10 %}0{% endif %}{{ num }}</span>
+            <div class="case-toggle-text">
+              <div class="case-toggle-cat" style="{{ c.title_style | default: 'letter-spacing: 0.03em' }}">{{ c.title }}</div>
+              <div class="case-toggle-client">{{ c.client }}</div>
+            </div>
+          </div>
+          <div class="case-toggle-right">
+            <div class="case-toggle-tags">{{ c.tags }}</div>
+            <span class="case-toggle-icon"><svg width="14" height="14" viewBox="0 0 20 20" fill="none"><path d="M4.5 7.5L10 13L15.5 7.5" stroke="#121210" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+          </div>
+        </button>
+        <div class="case-detail" hidden>
+{%- for s in c.sections %}
+          <div class="modal-row"><div class="modal-label">{{ s.label }}</div><div class="modal-copy">{{ s.text }}</div></div>
+{%- endfor %}
+{%- if c.result and c.result != "" %}
+          <div class="result-box">
+            <div class="result-label">Results</div>
+            <div class="result-copy">{{ c.result }}</div>
+          </div>
+{%- endif %}
+{%- for b in c.media %}{% include media-block.html block=b %}{% endfor %}
+          <div class="case-nav">
+            <button type="button" class="case-nav-btn prev">
+              <span class="case-nav-arrow"><svg width="16" height="16" viewBox="0 0 20 20" fill="none"><path d="M12.5 4.5L6.5 10L12.5 15.5" stroke="#121210" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+              <div>
+                <div class="case-nav-label">Previous Project</div>
+                <div class="case-nav-kicker">{{ prev.nav_category }}</div>
+                <div class="case-nav-name">{{ prev.client }}</div>
+              </div>
+            </button>
+            <button type="button" class="case-nav-btn next">
+              <div>
+                <div class="case-nav-label">Next Project</div>
+                <div class="case-nav-kicker">{{ next.nav_category }}</div>
+                <div class="case-nav-name">{{ next.client }}</div>
+              </div>
+              <span class="case-nav-arrow"><svg width="16" height="16" viewBox="0 0 20 20" fill="none"><path d="M7.5 4.5L13.5 10L7.5 15.5" stroke="#121210" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+            </button>
+          </div>
+        </div>
+      </div>
