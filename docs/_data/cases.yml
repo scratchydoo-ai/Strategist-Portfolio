@@ -68,17 +68,14 @@ sections:
 
    result: reached 4.6M TV viewers (US), and generated 1.9x uplift in app downloads
 
-#   media:
-#     - type: gallery                  # a grid of images and/or videos
-#       style: "grid-template-columns:1fr 1fr;"   # 1fr = one column, 1fr 1fr = two, etc.
-#       items:
-#         - image: assets/newclient-1.jpg
-#           alt: Describe the image
-#         - video: assets/newclient-tvc.mp4
-#           poster: assets/newclient-tvc-poster.jpg
-#           label: Describe the video
-#     - type: caption
-#       text: Caption shown under the block above.
+   media:
+     - type: gallery                  # a grid of images and/or videos
+       style: "grid-template-columns:1fr 1fr;"   # 1fr = one column, 1fr 1fr = two, etc.
+       items:
+         - video: assets/1696582824044.mp4
+     - type: caption
+       text: One of the Match Masters spots starring Real Housewives star Dorit Kemsley
+
 - id: fonepay
   title: NATIONWIDE ENROLLMENT CAMPAIGN
   title_style: "line-height: 1.01; letter-spacing: 0.03em"
