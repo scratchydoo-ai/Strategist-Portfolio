@@ -54,7 +54,7 @@
   sections:
     - label: Background
       text: >-
-        Candivore, the makers of ‘Match Masters’, a mobile game, wanted to reach a US audience they knew would love their app. And who better to introduce them into the market than one of America's leading entertainment companies
+        Candivore, the makers of ‘Match Masters’, a mobile game, wanted to reach a US audience they knew would love their app. And who better to introduce them into the market than one of America's leading entertainment companies?
     - label: Challenge
       text: >-
         Candivore wanted to tap into the world of premium IP and align itself with the fandom of NBCUniversal's iconic TV shows and personalities without working around production schedules or breaking the bank.
@@ -67,6 +67,7 @@
       style: "grid-template-columns:1fr;"
       items:
         - video: assets/1696582824044.mp4
+          poster: assets/DORIT_STILL_OPTION03-H-2023.webp
           label: Match Masters spot starring Dorit Kemsley
     - type: caption
       text: One of the Match Masters spots starring Real Housewives star Dorit Kemsley
