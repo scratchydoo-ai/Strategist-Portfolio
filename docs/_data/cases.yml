@@ -46,33 +46,30 @@
 # image "lightbox: <position in that list, starting at 0>". See Fonepay.
 # -----------------------------------------------------------------------------------------
 
-- id: candivore 
-title: BRANDED CAMPAIGN SPOTS
-client: Candivore
-nav_category: Branded Content
-tags: Brand Strategy · TV · Digital
-sections:
-     - label: Background
-       text: >-
-         Candivore, the makers of ‘Match Masters’, a mobile game, wanted to reach a US audience they knew would love their app. And who better to introduce them into the market than one of America's leading entertainment companies 
-
-     - label: Challenge
-       text: >-
-         Candivore wanted to tap into the world of premium IP and align itself with the fandom of NBCUniversal's iconic TV shows and personalities without working around production schedules or breaking the bank.
-
-     - label: Strategy
-       text: >-
-         Working with the in-house Talent Room, we identified NBCUniversal personalities whose fans were most likely to enjoy playing Match Masters: Dorit Kemsley from the Real Housewives franchise, E! Host Nicki Garcia, and Top Chef VIP star Chiky BomBom. Custom branded spots were shot against the backdrop of each show, aligning the game to a premium storytelling environment and creating an authentic connection between Match Masters and each iconic personality.
-
-   result: reached 4.6M TV viewers (US), and generated 1.9x uplift in app downloads
-
-   media:
-     - type: gallery
-       style: "grid-template-columns:1fr 1fr;"   # 1fr = one column, 1fr 1fr = two, etc.
-       items:
-         - video: assets/1696582824044.mp4
-     - type: caption
-       text: One of the Match Masters spots starring Real Housewives star Dorit Kemsley
+- id: candivore
+  title: BRANDED CAMPAIGN SPOTS
+  client: Candivore
+  nav_category: Branded Content
+  tags: Brand Strategy · TV · Digital
+  sections:
+    - label: Background
+      text: >-
+        Candivore, the makers of ‘Match Masters’, a mobile game, wanted to reach a US audience they knew would love their app. And who better to introduce them into the market than one of America's leading entertainment companies
+    - label: Challenge
+      text: >-
+        Candivore wanted to tap into the world of premium IP and align itself with the fandom of NBCUniversal's iconic TV shows and personalities without working around production schedules or breaking the bank.
+    - label: Strategy
+      text: >-
+        Working with the in-house Talent Room, we identified NBCUniversal personalities whose fans were most likely to enjoy playing Match Masters: Dorit Kemsley from the Real Housewives franchise, E! Host Nicki Garcia, and Top Chef VIP star Chiky BomBom. Custom branded spots were shot against the backdrop of each show, aligning the game to a premium storytelling environment and creating an authentic connection between Match Masters and each iconic personality.
+  result: Reached 4.6M TV viewers (US), and Generated 1.9x uplift in app downloads
+  media:
+    - type: gallery
+      style: "grid-template-columns:1fr;"
+      items:
+        - video: assets/1696582824044.mp4
+          label: Match Masters spot starring Dorit Kemsley
+    - type: caption
+      text: One of the Match Masters spots starring Real Housewives star Dorit Kemsley
 
 - id: fonepay
   title: NATIONWIDE ENROLLMENT CAMPAIGN
