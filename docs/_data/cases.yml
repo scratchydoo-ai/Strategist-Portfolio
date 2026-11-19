@@ -46,7 +46,7 @@
 # image "lightbox: <position in that list, starting at 0>". See Fonepay.
 # -----------------------------------------------------------------------------------------
 
--  id: candivore 
+- id: candivore 
 title: BRANDED CAMPAIGN SPOTS
 client: Candivore
 nav_category: Branded Content
